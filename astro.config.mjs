@@ -6,5 +6,11 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap(), tailwind(), react()]
+  integrations: [sitemap(), tailwind(), react()],
+  redirects: {
+    '/': {
+      status: 302,
+      destination: '/en'
+    }
+  }
 });
