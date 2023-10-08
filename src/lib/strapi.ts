@@ -34,7 +34,7 @@ export default async function fetchApi<T>({
     lang = 'locale=en&locale=fi';
   }
   
-  const url = new URL(`${import.meta.env.STRAPI_URL}/api/${endpoint}?pagination[limit]=999&populate=localizations&${lang}`);
+  const url = new URL(`${import.meta.env.STRAPI_URL}/api/${endpoint}?populate=localizations&${lang}`);
 
   const res = await fetch(url.toString());
   let data = await res.json();

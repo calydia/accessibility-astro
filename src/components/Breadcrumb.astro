@@ -2,7 +2,7 @@
 import fetchApi from '../lib/strapi';
 import type { MenuTitleInterface } from '../interfaces/menuTitleInterface';
 
-const menuTitles = await fetchApi<MenuTitleInterface[]>({
+const menuTitles = await fetchApi<MenuTitleInterface>({
   endpoint: 'menu-title-list',
   wrappedByKey: 'data',
 });

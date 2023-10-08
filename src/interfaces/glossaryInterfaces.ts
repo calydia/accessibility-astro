@@ -1,10 +1,12 @@
 export interface glossaryData {
   data: {
     glossaryTerms: {
-      attributes: {
-        termName: string,
-        termDescription: string
-      }
+      data: [{
+        attributes: {
+          termName: string,
+          termDescription: string
+        }
+      }]
     }
   }
 }
