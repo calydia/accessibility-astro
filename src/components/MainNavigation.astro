@@ -124,17 +124,17 @@ const menuItems = await mainMenu.json();
     button.addEventListener('click', () => {
       const currentExpanded = button.getAttribute('aria-expanded');
       (currentExpanded == 'true') ? button.setAttribute('aria-expanded', 'false') : button.setAttribute('aria-expanded', 'true');
+      
+      // Close all other menu levels except the current one
+      const allButtons = document.getElementsByClassName('menu-button');
+      if (allButtons instanceof HTMLCollection) {
+        Array.from(allButtons).forEach((element: Element) => {
+          if (element !== button) {
+            element.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
     });
-
-    // Close all other menu levels except the current one
-    const allButtons = document.getElementsByClassName('menu-button');
-    if (allButtons instanceof HTMLCollection) {
-      Array.from(allButtons).forEach((element: Element) => {
-        if (element !== button) {
-          element.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
   });
 
   const subButtons = document.querySelectorAll('.mobile-menu-toggle');
