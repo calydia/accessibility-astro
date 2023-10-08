@@ -26,12 +26,12 @@ export default async function fetchApi<T>({
 
   if (lang) {
     if ( lang == 'en') {
-      lang = '&locale=en';
+      lang = 'locale=en';
     } else {
       lang = 'locale=fi';
     }
   } else {
-    lang = '&locale=en&locale=fi';
+    lang = 'locale=en&locale=fi';
   }
   
   const url = new URL(`${import.meta.env.STRAPI_URL}/api/${endpoint}?pagination[limit]=999&populate=localizations&${lang}`);
