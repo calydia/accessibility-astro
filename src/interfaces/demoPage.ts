@@ -1,5 +1,5 @@
 export default interface DemoPage {
-  id: number;
+  id: number,
   attributes: {
     title: string,
     slug: string,

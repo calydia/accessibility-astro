@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import fetchApi from '../../lib/strapi';
 import type { SearchPage } from '../../interfaces/SearchPage';
 import SearchComponent from '../../components/SearchComponent';
-const searchPage = await fetchApi<SearchPage[]>({
+const searchPage = await fetchApi<SearchPage>({
   endpoint: 'search-page',
   wrappedByKey: 'data',
   lang: 'fi'

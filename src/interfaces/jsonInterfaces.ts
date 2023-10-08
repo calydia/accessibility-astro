@@ -1,21 +1,21 @@
 export interface NodeArticle {
-  type: string;
-  id: string;
+  type: string,
+  id: string,
   links: {
     self: {
-      href: string;
+      href: string
     };
   };
   attributes: {
     drupal_internal__nid: number;
-    langcode: string;
-    status: boolean;
-    title: string;
-    created: string;
+    langcode: string,
+    status: boolean,
+    title: string,
+    created: string,
     path: {
-      alias: string;
-      pid: number;
-      langcode: string;
+      alias: string,
+      pid: number,
+      langcode: string
     };
   };
   relationships: {
@@ -29,35 +29,35 @@ export interface NodeArticle {
     };
     field_blog_category: {
       data: {
-        type: string;
-        id: string;
+        type: string,
+        id: string,
         meta: {
-          drupal_internal__target_id: number;
+          drupal_internal__target_id: number
         };
       };
       links: {
         related: {
-          href: string;
+          href: string
         };
         self: {
-          href: string;
+          href: string
         };
       };
     };
     field_blog_listing_image: {
       data: {
-        type: string;
-        id: string;
+        type: string,
+        id: string,
         meta: {
-          drupal_internal__target_id: number;
+          drupal_internal__target_id: number
         };
       };
       links: {
         related: {
-          href: string;
+          href: string
         };
         self: {
-          href: string;
+          href: string
         };
       };
     };
