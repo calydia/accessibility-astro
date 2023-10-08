@@ -1,0 +1,87 @@
+---
+import type { FooterMenuItem } from '../interfaces/menuInterfaces';
+
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+import { Icon } from 'astro-icon';
+import { Image } from 'astro:assets';
+
+const fetchUrl = (Astro.props.locale == 'en') ? 'https://accessibility-strapi.ampere.corrupted.pw/api/navigation/render/info?type=TREE&locale=en' : 'https://accessibility-strapi.ampere.corrupted.pw/api/navigation/render/info?type=tree&locale=fi'
+
+const infoMenu = await fetch(fetchUrl);
+const menuItems = await infoMenu.json();
+
+const currentPath = Astro.props.currentPage;
+
+---
+
+<footer class="p-4-px lg:px-8-px lg:py-4-px border-t-8 border-solid border-blue-tory bg-lt-blue-light dark:bg-dk-purple">
+  <div class="text-center">
+    <button id="back-to-top" class="text-center button--alternative hover--border item--transition">
+      <Icon name="arrow-up-circle-solid" class="h-12 w-12 mx-auto" />
+      { t('back-to-top-button') }
+    </button>
+  </div>
+  <div class="md:flex md:justify-between max-w-[1500px] mx-auto">
+    <nav aria-label={ t('footer-menu-aria') }>
+      <ul>
+      {menuItems.map((menuItem: FooterMenuItem, index: number) => {
+        const ariaCurrentPage = (currentPath === menuItem.path) ? 'page' : undefined;
+        const activeClass = (currentPath === menuItem.path) ? 'active-link': 'non-active-link';
+
+        return (
+          <li class="flex gap-4 items-center my-4 text-lt-blue-dark dark:text-dk-blue-light">
+            <Icon name={menuItem.iconClass} class="h-8 w-8" />
+            <a href={`/${lang}/${menuItem.path}`} aria-current={ariaCurrentPage} class={`${activeClass}`}
+            >
+              {menuItem.title}
+            </a>
+          </li>
+        );
+      })}
+      </ul>
+    </nav>
+    <div class="flex items-center">
+      <span class="logo-dark mr-2.5">
+        <Image
+          src="/sm-logo-darkblue.png"
+          alt=""
+          width={35}
+          height={27}
+          aria-hidden="true"
+        />
+      </span>
+      <span class="logo-light mr-4">
+        <Image
+          src="/sm-logo-lightblue.png"
+          alt=""
+          width={35}
+          height={27}
+          aria-hidden="true"
+        />
+      </span>
+      <a
+        href="https://blog.sanna.ninja"
+        rel="noopener noreferrer"
+        class="font-light"
+      >
+        { t('ext-blog') }
+      </a>
+    </div>
+  </div>
+  <script is:inline src="/skip-content.js"></script>
+</footer>
+
+<script>
+  const backToTop = document.querySelectorAll('#back-to-top');
+
+  backToTop.forEach((button) => {
+    button.addEventListener('click', () => {
+      const target = document.getElementById('page-top');
+      (target as HTMLElement).setAttribute('tabindex', '-1');
+      (target as HTMLElement).focus();
+    });
+  });
+</script>

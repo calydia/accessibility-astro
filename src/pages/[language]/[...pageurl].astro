@@ -1,0 +1,62 @@
+---
+import fetchApi from '../../lib/strapi';
+import type Page from '../../interfaces/page';
+import Layout from '../../layouts/Layout.astro';
+import Glossary from '../../components/Glossary.astro';
+import HumanSitemap from '../../components/HumanSitemap.astro';
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export async function getStaticPaths() {
+  const pages = await fetchApi<Page[]>({
+    endpoint: 'pages',
+    wrappedByKey: 'data',
+  });
+
+  return pages.map((page: Page) => ({
+    params: { pageurl: page.attributes.pageUrl, language: page.attributes.locale },
+    props: page,
+  }));
+}
+type Props = Page;
+
+const page = Astro.props;
+
+const engUrl = (page.attributes.locale == 'en') ? page.attributes.pageUrl : page.attributes.localizations.data[0].attributes.pageUrl;
+const fiUrl = (page.attributes.locale == 'fi') ? page.attributes.pageUrl : page.attributes.localizations.data[0].attributes.pageUrl;
+
+---
+
+<Layout title={ page.attributes.title } locale={ page.attributes.locale} metaDescription={ page.attributes.metaDescription }
+  engUrl={ engUrl } fiUrl={ fiUrl} currentUrl={ page.attributes.pageUrl } currentSlug={ page.attributes.slug }
+  >
+  <div class="max-w-[1564px] mx-auto md:px-8-px">
+    <div class="text-lt-gray dark:text-dk-gray py-2 px-4-px max-w-xl mx-auto md:py-6 md:px-8-px lg:max-w-4xl">
+      <h1 id="skip-target" class="text-3xl font-bold mt-4 mb-2 lg:text-4xl">{ page.attributes.title }</h1>
+      <div class="text-xl bodytext"><Fragment set:html={ page.attributes.content } /></div>
+      { (page.attributes.slug === "glossary" || page.attributes.slug === 'sanasto') ?
+        <Glossary currentLang={ page.attributes.locale } />
+      : null }
+      { page.attributes.sourceMaterial ?
+      <div class="relative text-xl bodytext mt-12 p-8-px lg:mt-20 txt-base border-solid border-4 bg-lt-code-bg border-lt-code-border dark:bg-dk-code-bg dark:border-dk-code-border">
+        <h2 class="mt-0 mb-6">{ t('box-source') }</h2>
+        <div><Fragment set:html={ page.attributes.sourceMaterial } /></div>
+      </div>
+      : ''}
+      { (page.attributes.slug === "sitemap" || page.attributes.slug === 'sivukartta') ?
+        <HumanSitemap currentUrl={ page.attributes.pageUrl } />
+      : null }
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .glossary-term p:first-of-type {
+    @apply mt-0;
+  }
+  .glossary-term p:last-of-type {
+    @apply mb-0;
+  }
+</style>
