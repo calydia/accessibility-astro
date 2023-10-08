@@ -7,7 +7,8 @@ import MainNavigation from '../components/MainNavigation.astro';
 import MainImage from '../components/MainImage.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Footer from '../components/Footer.astro';
-const { title, locale, engUrl, fiUrl, currentUrl, currentSlug, metaDescription, currentType } = Astro.props
+import Alternates from '../components/Alternates.astro';
+const { title, locale, engUrl, fiUrl, currentUrl, currentSlug, metaDescription, currentType, alternateFi, alternateEn } = Astro.props
 
 import '@fontsource/rock-salt';
 import '@fontsource/average-sans';
@@ -35,6 +36,7 @@ const t = useTranslations(lang);
     <meta property="og:image" content="/some-share.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <Alternates alternateFi={ alternateFi } alternateEn={ alternateEn } />
   </head>
   <body class="font-sans hyphens-auto">
     <header id="page-top" class="bg-gradient-to-r from-lt-perfume via-lt-blue-light to-lt-perfume

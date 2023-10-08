@@ -30,7 +30,8 @@ const fiUrl = (page.attributes.locale == 'fi') ? page.attributes.pageUrl : page.
 ---
 
 <Layout title={ page.attributes.title } locale={ page.attributes.locale} metaDescription={ page.attributes.metaDescription }
-  engUrl={ engUrl } fiUrl={ fiUrl} currentUrl={ page.attributes.pageUrl } currentSlug={ page.attributes.slug }
+  engUrl={ engUrl } fiUrl={ fiUrl } currentUrl={ page.attributes.pageUrl } currentSlug={ page.attributes.slug }
+  alternateFi={`fi/${ fiUrl }`} alternateEn={`en/${ engUrl }`}
   >
   <div class="max-w-[1564px] mx-auto md:px-8-px">
     <div class="text-lt-gray dark:text-dk-gray py-2 px-4-px max-w-xl mx-auto md:py-6 md:px-8-px lg:max-w-4xl">
