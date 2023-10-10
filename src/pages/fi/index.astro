@@ -20,4 +20,5 @@ const frontPage = await fetchApi<FrontPage>({
       <div class="text-xl bodytext"><Fragment set:html={ frontPage.attributes.content } /></div>
     </div>
   </div>
+  <BlogHighlights slot="blogs" />
 </Layout>
