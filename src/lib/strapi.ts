@@ -33,8 +33,13 @@ export default async function fetchApi<T>({
   } else {
     lang = 'locale=en&locale=fi';
   }
+
+  let sort = '';
+  if (endpoint == 'glossary-terms') {
+    sort = '&sort=termName';
+  }
   
-  const url = new URL(`${import.meta.env.STRAPI_URL}/api/${endpoint}?populate=localizations&${lang}`);
+  const url = new URL(`${import.meta.env.STRAPI_URL}/api/${endpoint}?populate=localizations&${lang}${sort}`);
 
   const res = await fetch(url.toString());
   let data = await res.json();
