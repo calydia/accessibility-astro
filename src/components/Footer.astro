@@ -14,7 +14,6 @@ const infoMenu = await fetch(fetchUrl);
 const menuItems = await infoMenu.json();
 
 const currentPath = Astro.props.currentPage;
-
 ---
 
 <footer class="p-4-px lg:px-8-px lg:py-4-px border-t-8 border-solid border-blue-tory bg-lt-blue-light dark:bg-dk-purple">
@@ -34,7 +33,7 @@ const currentPath = Astro.props.currentPage;
         return (
           <li class="flex gap-4 items-center my-4 text-lt-blue-dark dark:text-dk-blue-light">
             <Icon name={menuItem.iconClass} class="h-8 w-8" />
-            <a href={`/${lang}${menuItem.path}`} aria-current={ariaCurrentPage} class={`${activeClass}`}
+            <a href={`/${lang}/${menuItem.path}`} aria-current={ariaCurrentPage} class={`${activeClass}`}
             >
               {menuItem.title}
             </a>
