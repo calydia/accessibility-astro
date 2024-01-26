@@ -5,7 +5,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 
 const fetchUrl = (Astro.props.locale == 'en') ? 'https://accessibility-strapi.ampere.corrupted.pw/api/navigation/render/info?type=TREE&locale=en' : 'https://accessibility-strapi.ampere.corrupted.pw/api/navigation/render/info?type=tree&locale=fi'
