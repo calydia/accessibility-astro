@@ -8,7 +8,7 @@ import MainImage from '../components/MainImage.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Footer from '../components/Footer.astro';
 import Alternates from '../components/Alternates.astro';
-const { title, locale, engUrl, fiUrl, currentUrl, currentSlug, metaDescription, currentType, alternateFi, alternateEn } = Astro.props
+const { title, locale, engUrl, fiUrl, currentUrl, currentSlug, metaDescription, currentType, alternateFi, alternateEn, type } = Astro.props
 
 import '@fontsource/rock-salt';
 import '@fontsource/average-sans';
@@ -36,7 +36,7 @@ const t = useTranslations(lang);
     <meta property="og:image" content="/some-share.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <Alternates alternateFi={ alternateFi } alternateEn={ alternateEn } />
+    <Alternates alternateFi={ alternateFi } alternateEn={ alternateEn } type={ type } />
   </head>
   <body class="font-sans hyphens-auto">
     <header id="page-top" class="bg-gradient-to-r from-lt-perfume via-lt-blue-light to-lt-perfume
@@ -44,7 +44,7 @@ const t = useTranslations(lang);
       <SkipLink skipId="skip" skipTarget="skip-target" skipTextVariable="skip-link-text" />
       <div class="flex flex-wrap justify-end gap-1">
         <SearchBlock locale={locale} />
-        <LanguageSwitcher englishURL={ engUrl } finnishURL={ fiUrl } currentPage={ currentUrl } />
+        <LanguageSwitcher englishURL={ engUrl } finnishURL={ fiUrl } currentPage={ currentUrl } type={ type } />
         <ThemeToggle />
       </div>
       <div class="text-center clear-both lg:clear:none">

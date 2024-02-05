@@ -1,7 +1,12 @@
 ---
 const alternateFi = Astro.props.alternateFi;
 const alternateEn = Astro.props.alternateEn;
----
 
+---
+{ (Astro.props.type === "demo") ?
+<link rel="alternate" hreflang="fi" href={`https://a11y.sanna.ninja/fi/demo/${ alternateFi }`} />
+<link rel="alternate" hreflang="en" href={`https://a11y.sanna.ninja/en/demo/${ alternateEn }`} />
+:
 <link rel="alternate" hreflang="fi" href={`https://a11y.sanna.ninja/${ alternateFi }`} />
 <link rel="alternate" hreflang="en" href={`https://a11y.sanna.ninja/${ alternateEn }`} />
+}
