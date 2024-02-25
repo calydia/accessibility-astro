@@ -18,6 +18,10 @@ export default defineConfig({
     }
   },
   redirects: {
+    '/': {
+      status: 302,
+      destination: '/en'
+    },
     '/fi/saavutettavuuden-varmistaminen/wcag/mika-on-wcag': {
       status: 302,
       destination: '/fi/tekninen-saavutettavuus/wcag/mika-on-wcag'
