@@ -2,15 +2,17 @@
 import fetchApi from '../lib/strapi';
 import type { MenuTitleInterface } from '../interfaces/menuTitleInterface';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const menuTitles = await fetchApi<MenuTitleInterface>({
   endpoint: 'menu-title-list',
   wrappedByKey: 'data',
+  lang: lang
 });
 const menuTitleList = menuTitles.attributes.titleList.menuItems;
 
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 
 const pathArray = (Astro.props.currentUrl !== '/') ? Astro.props.currentUrl.split('/') : null;
 
