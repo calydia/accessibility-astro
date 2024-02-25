@@ -9,14 +9,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: 'https://a11y.sanna.ninja',
   integrations: [sitemap(), tailwind(), react(), icon()],
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "fi"],
-    routing: {
-      prefixDefaultLocale: true,
-      redirectToDefaultLocale: false
-    }
-  },
   redirects: {
     '/': {
       status: 302,
