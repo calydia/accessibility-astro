@@ -310,9 +310,9 @@ export default defineConfig({
       status: 302,
       destination: '/fi/sisallon-saavutettavuus/muun-sisallon-saavutettavuus/sosiaalinen-media-ja-saavutettavuus'
     },
-    '/en/ensuring-accessibility-compliance/for-content-creators/writing-website-text-content': {
+    '/en/ensuring-accessibility-compliance/for-content-creators/writing-accessible-text-content': {
       status: 302,
-      destination: '/en/content-accessibility/text-content/writing-website-text-content'
+      destination: '/en/content-accessibility/text-content/writing-accessible-text-content'
     },
     '/en/ensuring-accessibility-compliance/for-content-creators/creating-non-text-content': {
       status: 302,

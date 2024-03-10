@@ -41,10 +41,10 @@ const fiUrl = (page.attributes.locale == 'fi') ? page.attributes.pageUrl : page.
         <Glossary currentLang={ page.attributes.locale } />
       : null }
       { page.attributes.sourceMaterial ?
-      <div class="relative text-xl bodytext mt-12 p-8-px lg:mt-20 txt-base border-solid border-4 bg-lt-code-bg border-lt-code-border dark:bg-dk-code-bg dark:border-dk-code-border">
-        <h2 class="mt-0 mb-6">{ t('box-source') }</h2>
+      <section aria-labelledby="sources-title" class="relative text-xl bodytext mt-12 p-8-px lg:mt-20 txt-base border-solid border-4 bg-lt-code-bg border-lt-code-border dark:bg-dk-code-bg dark:border-dk-code-border">
+        <h2 id="sources-title" class="mt-0 mb-6">{ t('box-source') }</h2>
         <div><Fragment set:html={ page.attributes.sourceMaterial } /></div>
-      </div>
+      </section>
       : ''}
       { (page.attributes.slug === "sitemap" || page.attributes.slug === 'sivukartta') ?
         <HumanSitemap currentUrl={ page.attributes.pageUrl } />
