@@ -8,7 +8,15 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://a11y.sanna.ninja',
-  integrations: [sitemap(), tailwind(), react(), icon()],
+  integrations: [sitemap({
+    i18n: {
+      defaultLocale: 'en',
+      locales: {
+        en: 'en',
+        fi: 'fi'
+      }
+    }
+  }), tailwind(), react(), icon()],
   redirects: {
     '/fi/saavutettavuuden-varmistaminen/wcag/mika-on-wcag': {
       status: 302,
