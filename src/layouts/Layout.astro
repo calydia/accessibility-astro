@@ -148,7 +148,7 @@ const t = useTranslations(lang);
   }
 
   .introduction p {
-    @apply text-2xl;
+    @apply text-2xl leading-relaxed;
   }
 
   .toc-box {
@@ -160,7 +160,11 @@ const t = useTranslations(lang);
   }
 
   .toc-box li {
-    @apply my-2;
+    @apply my-4;
+  }
+
+  .toc-box li li {
+    @apply mx-2;
   }
 
   .post-link {
@@ -219,7 +223,6 @@ const t = useTranslations(lang);
   main {
     @apply text-lg lg:text-xl;
   }
-
 
   .breadcrumb a,
   #main-menu-nav a,
