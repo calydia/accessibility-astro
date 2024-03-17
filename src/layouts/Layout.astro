@@ -147,6 +147,22 @@ const t = useTranslations(lang);
     @apply my-8 leading-relaxed font-light;
   }
 
+  .introduction p {
+    @apply text-2xl;
+  }
+
+  .toc-box {
+    @apply bg-white dark:bg-dk-blue-darkest my-12 border-solid border-l-8 border-t-2 border-b-2 border-r-2 rounded-3xl border-lt-code-border dark:border-dk-code-border p-8;
+  }
+
+  .light .toc-box {
+    @apply shadow-2xl;
+  }
+
+  .toc-box li {
+    @apply my-2;
+  }
+
   .post-link {
     @apply no-underline;
   }
@@ -156,15 +172,15 @@ const t = useTranslations(lang);
   }
 
   h2 {
-    @apply text-3xl lg:text-4xl font-bold mt-8;
+    @apply text-2xl lg:text-3xl font-bold mt-8 font-heading;
   }
 
   h3 {
-    @apply text-2xl lg:text-3xl font-bold mt-8;
+    @apply text-xl lg:text-2xl font-bold mt-8 font-heading;
   }
 
   h4 {
-    @apply text-xl lg:text-2xl font-bold mt-8;
+    @apply text-lg lg:text-xl font-bold mt-8 font-heading;
   }
 
   .custom-grid {
@@ -197,7 +213,7 @@ const t = useTranslations(lang);
   }
 
   code {
-    @apply text-base border-solid border py-0.5 px-1 mx-0.5 inline-block bg-lt-code-bg border-lt-code-border dark:bg-dk-code-bg dark:border-dk-code-border;
+    @apply text-base border-solid border py-0.5 px-1 mx-0.5 inline-block bg-lt-code-bg border-lt-code-border dark:bg-dk-code-bg dark:border-dk-code-border shadow-lg;
   }
 
   main {

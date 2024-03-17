@@ -28,6 +28,7 @@ module.exports = {
       fontFamily: {
         'title': ['Rock Salt', 'cursive'],
         'sans': ['Average Sans', 'Arial', 'sans-serif'],
+        'heading': ['Average Sans'],
         'menu': ['Lato', 'Arial', 'sans-serif'],
       },
       outlineOffset: {

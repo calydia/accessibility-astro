@@ -4,6 +4,8 @@ export default interface Page {
     title: string,
     metaDescription: string,
     content: string,
+    toc: string,
+    introduction: string,
     slug: string,
     pageUrl: string,
     createdAt: string,

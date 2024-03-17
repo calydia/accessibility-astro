@@ -40,7 +40,8 @@ export const ui = {
     'search-demo-link': 'Jump to demo results',
     'search-result-no-results': 'No results.',
     'search-block-label': 'Go to search page',
-    'back-to-top-button': 'Back to top'
+    'back-to-top-button': 'Back to top',
+    "toc-title": "Table of contents"
   },
   fi: {
     'site-name': 'Toki, jos voisin',
@@ -76,6 +77,7 @@ export const ui = {
     'search-demo-link': 'Hyppää demosivujen tuloksiin',
     'search-result-no-results': 'Ei tuloksia.',
     'search-block-label': 'Siirry hakusivulle',
-    'back-to-top-button': 'Takaisin sivun ylälaitaan'
+    'back-to-top-button': 'Takaisin sivun ylälaitaan',
+    "toc-title": "Sisällysluettelo"
   },
 } as const;

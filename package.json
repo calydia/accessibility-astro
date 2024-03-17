@@ -15,6 +15,7 @@
     "@astrojs/sitemap": "^3.0.1",
     "@astrojs/tailwind": "^5.0.1",
     "@fontsource/average-sans": "^5.0.8",
+    "@fontsource/inter": "^5.0.17",
     "@fontsource/lato": "^5.0.14",
     "@fontsource/rock-salt": "^5.0.14",
     "@types/react": "^18.2.25",
