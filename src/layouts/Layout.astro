@@ -144,11 +144,11 @@ const t = useTranslations(lang);
   }
 
   p {
-    @apply my-8 leading-relaxed font-light;
+    @apply text-lg md:text-xl mb-8 leading-relaxed md:leading-relaxed font-light;
   }
 
   .introduction p {
-    @apply text-2xl leading-relaxed;
+    @apply text-xl md:text-2xl leading-relaxed md:leading-relaxed;
   }
 
   .toc-box {
@@ -175,16 +175,23 @@ const t = useTranslations(lang);
     @apply text-lt-purple dark:text-dk-blue-light underline decoration-2 underline-offset-4;
   }
 
+  h1 {
+    @apply text-3xl font-bold font-heading mt-4 mb-4 lg:mb-8 lg:text-4xl;
+  }
   h2 {
-    @apply text-2xl lg:text-3xl font-bold mt-8 font-heading;
+    @apply mb-4 text-2xl lg:text-3xl font-bold mt-12 font-heading;
   }
 
   h3 {
-    @apply text-xl lg:text-2xl font-bold mt-8 font-heading;
+    @apply mb-4 text-xl lg:text-2xl font-bold mt-12 font-heading;
   }
 
   h4 {
-    @apply text-lg lg:text-xl font-bold mt-8 font-heading;
+    @apply mb-4 text-lg lg:text-xl font-bold mt-12 font-heading;
+  }
+
+  .demo-heading {
+    @apply mb-0;
   }
 
   .custom-grid {
@@ -268,6 +275,15 @@ const t = useTranslations(lang);
 
   ol li {
     @apply my-4;
+  }
+
+  .bodytext ol, ul {
+    @apply mb-8;
+  }
+  
+  .bodytext ol ol,
+  .bodytext ul ul {
+    @apply mb-0;
   }
 
   blockquote ul {
