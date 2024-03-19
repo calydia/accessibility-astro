@@ -6,12 +6,13 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const asPath = Astro.props.currentUrl;
+const asPath = '/' + Astro.props.currentUrl;
 
 const fetchUrl = (lang == 'en') ? 'https://accessibility-strapi.ampere.corrupted.pw/api/navigation/render/main-navigation?type=TREE&locale=en' : 'https://accessibility-strapi.ampere.corrupted.pw/api/navigation/render/main-navigation?type=TREE&locale=fi'
 
 const mainMenu = await fetch(fetchUrl);
 const menuItems = await mainMenu.json();
+
 ---
 
 <nav id="main-menu-nav" aria-labelledby="main-menu-label" class="text-black dark:text-white py-1 mt-2 nav-bar">

@@ -12,7 +12,7 @@ const fetchUrl = (Astro.props.locale == 'en') ? 'https://accessibility-strapi.am
 const infoMenu = await fetch(fetchUrl);
 const menuItems = await infoMenu.json();
 
-const currentPath = Astro.props.currentPage;
+const currentPath = '/' + Astro.props.currentPage;
 ---
 
 <footer class="p-4-px lg:px-8-px lg:py-4-px border-t-8 border-solid border-blue-tory bg-lt-blue-light dark:bg-dk-purple">
