@@ -26,7 +26,6 @@ const page = Astro.props;
 
 const engUrl = (page.attributes.locale == 'en') ? page.attributes.pageUrl : page.attributes.localizations.data[0].attributes.pageUrl;
 const fiUrl = (page.attributes.locale == 'fi') ? page.attributes.pageUrl : page.attributes.localizations.data[0].attributes.pageUrl;
-
 ---
 
 <Layout title={ page.attributes.title } locale={ page.attributes.locale} metaDescription={ page.attributes.metaDescription }
@@ -37,7 +36,7 @@ const fiUrl = (page.attributes.locale == 'fi') ? page.attributes.pageUrl : page.
     <div class="text-lt-gray dark:text-dk-gray py-2 px-4-px max-w-xl mx-auto md:py-6 md:px-8-px lg:max-w-4xl">
       <h1 id="skip-target">{ page.attributes.title }</h1>
       <div class="introduction"><Fragment set:html={ page.attributes.introduction } /></div>
-      { page.attributes.toc ?
+      { page.attributes.toc.length > 10 ?
         <aside aria-labelledby="toc-title" class="toc-box">
           <h2 id="toc-title" class="mt-0 mb-4">{ t('toc-title') }</h2>
           <Fragment set:html={ page.attributes.toc } />
