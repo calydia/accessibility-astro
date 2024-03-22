@@ -166,6 +166,10 @@ const t = useTranslations(lang);
     @apply mx-2;
   }
 
+  .toc-box a {
+    @apply no-underline hover:underline;
+  }
+
   .post-link {
     @apply no-underline;
   }
@@ -202,7 +206,8 @@ h4::before {
     @apply mb-0;
   }
 
-  .demo-heading::before {
+  .demo-heading::before,
+  .a11y-heading::before {
     @apply hidden invisible;  
   }
 
