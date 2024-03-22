@@ -175,19 +175,28 @@ const t = useTranslations(lang);
   }
 
   h1 {
-    @apply text-3xl font-bold font-heading mt-4 mb-4 lg:mb-8 lg:text-4xl;
+    @apply text-3xl font-bold font-heading mt-4 mb-4 lg:mb-8 lg:text-4xl relative;
   }
   h2 {
-    @apply mb-4 text-2xl lg:text-3xl font-bold mt-12 font-heading;
+    @apply mb-4 text-2xl lg:text-3xl font-bold mt-12 font-heading relative;
   }
 
   h3 {
-    @apply mb-4 text-xl lg:text-2xl font-bold mt-12 font-heading;
+    @apply mb-4 text-xl lg:text-2xl font-bold mt-12 font-heading relative;
   }
 
   h4 {
-    @apply mb-4 text-lg lg:text-xl font-bold mt-12 font-heading;
+    @apply mb-4 text-lg lg:text-xl font-bold mt-12 font-heading relative;
   }
+
+h1::before,
+h2::before,
+h3::before,
+h4::before {
+  content: '';
+
+  @apply bg-lt-perfume dark:bg-dk-purple-header absolute block z-[-1] bottom-0 w-10 h-2.5;
+}
 
   .demo-heading {
     @apply mb-0;
@@ -452,7 +461,6 @@ const t = useTranslations(lang);
     border-color: var(--menu-header-background);
     width: calc(100% - 1.25rem);
   }
-
   .glossary-term p:first-of-type {
     @apply mt-0;
   }
