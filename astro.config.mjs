@@ -356,7 +356,7 @@ export default defineConfig({
     },
     '/en/accessibility-fundamentals/the-basics/what-accessibility-is': {
       status: 302,
-      destination: '/en/fundamentals/the-basics/what-accessibility-is'
+      destination: '/en/fundamentals/the-basics/what-is-accessibility'
     },
     '/en/accessibility-fundamentals/the-basics/who-accessibility-is-for': {
       status: 302,
