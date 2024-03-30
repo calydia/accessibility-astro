@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://accessibility-strapi.ampere.corrupted.pw/api/sitemap/index.xml
+Sitemap: https://a11y.sanna.ninja/sitemap-index.xml
