@@ -19,9 +19,9 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const gridClass = (currentType !== "front" && currentUrl.includes('info/') === false) ? 'use-grid' : 'no-grid';
-const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === false) ? 'crumb-grid' : 'crumb-no-grid';
+console.log(currentUrl);
+const gridClass = (currentType !== "front" && currentUrl.includes('info/') === false && currentUrl.includes('search') === false && currentUrl.includes('haku') === false) ? 'use-grid' : 'no-grid';
+const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === false && currentUrl.includes('search') === false && currentUrl.includes('haku') === false) ? 'crumb-grid' : 'crumb-no-grid';
 ---
 <html lang={ locale }>
   <head>

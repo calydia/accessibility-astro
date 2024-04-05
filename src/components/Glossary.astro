@@ -13,7 +13,7 @@ const glossaryTerms = await fetchApi<glossaryData[]>({
   {glossaryTerms.map((glossaryTerm: glossaryItem) => {
 
     return (
-      <dt class="text-blue-tory dark:text-lt-perfume col-span-1">{glossaryTerm.attributes.termName}</dt>
+      <dt class="text-blue-tory dark:text-lt-perfume col-span-1">{ glossaryTerm.attributes.termName }</dt>
       <dd class="ml-8 glossary-term col-span-4"><Fragment set:html={ glossaryTerm.attributes.termDescription } /></dd>
     );
   })}

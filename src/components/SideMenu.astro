@@ -14,7 +14,7 @@ const sideMenu = await fetch(fetchUrl);
 const menuItems = await sideMenu.json();
 
 const firstPart = '/' + Astro.props.currentUrl.substring(0, Astro.props.currentUrl.indexOf("/"));
-const filteredMenu = menuItems.filter(menuItem => menuItem.path === firstPart);
+const filteredMenu = menuItems.filter((menuItem: MainMenuItem) => menuItem.path === firstPart);
 ---
 
 
