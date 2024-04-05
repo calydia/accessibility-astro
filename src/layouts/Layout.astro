@@ -8,6 +8,7 @@ import MainImage from '../components/MainImage.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Footer from '../components/Footer.astro';
 import Alternates from '../components/Alternates.astro';
+import SideMenu from '../components/SideMenu.astro';
 const { title, locale, engUrl, fiUrl, currentUrl, currentSlug, metaDescription, currentType, alternateFi, alternateEn, type } = Astro.props
 
 import '@fontsource/rock-salt';
@@ -18,6 +19,9 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const gridClass = (currentType !== "front" && currentUrl.includes('info/') === false) ? 'use-grid' : 'no-grid';
+const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === false) ? 'crumb-grid' : 'crumb-no-grid';
 ---
 <html lang={ locale }>
   <head>
@@ -66,10 +70,13 @@ const t = useTranslations(lang);
       <MainNavigation currentUrl={ currentUrl } />
     </header>
     <MainImage />
-    { (currentType !== "front")  ?
-      <Breadcrumb currentTitle={ title } currentUrl={ currentUrl } currentSlug={ currentSlug } />
+    { (currentType !== "front") ?
+      <Breadcrumb currentTitle={ title } currentUrl={ currentUrl } currentSlug={ currentSlug } gridClass={crumbClass}  />
     : null }
-    <main class="text-lg lg:text-xl mb-8 md:mb-12">
+    <main class={`text-lg lg:text-xl mb-8 md:mb-12 max-w-7xl md:mx-auto ${gridClass}`}>
+      { (currentType !== "front" && !currentUrl.includes('/info/')) ?
+        <SideMenu currentUrl={ currentUrl } />
+      : null }
       <slot />
     </main>
     <slot name="blogs" />
@@ -156,6 +163,10 @@ const t = useTranslations(lang);
 
   .light .toc-box {
     @apply shadow-2xl;
+  }
+
+  .light .sidebar-menu {
+    @apply shadow-xl;
   }
 
   .toc-box li {
@@ -531,6 +542,20 @@ h4::before {
   .dark .gradient-border-demo {
     border-image: linear-gradient(to right, #46037e 0%, RoyalBlue 50%, #46037e 100%);
     border-image-slice: 1;
+  }
+
+  .use-grid {
+    grid-template-columns: 320px 1fr;
+
+    @apply md:grid;
+  }
+
+  .crumb-grid {
+    @apply md:ml-[372px];
+  }
+
+  .crumb-no-grid {
+    @apply max-w-4xl mx-auto;
   }
 </style>
 
