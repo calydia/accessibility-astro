@@ -54,7 +54,7 @@ const filteredMenu = menuItems.filter((menuItem: MainMenuItem) => menuItem.path 
                             <span class="sr-only">{ t('menu-button-next-level') }</span>
                           </button>
                           <ul id={`menu-button-lower-${subIndex}-${titleModified}`} aria-labelledby={`subMenuItem-heading-${subIndex}-${subMenuItem.title.toLowerCase().replaceAll(' ', '-')}`}
-                            class="ml-3 lg:ml-8">
+                            class="ml-3 lg:ml-8 mb-0">
                             {subMenuItem.items && subMenuItem.items.map((lowerSubMenuItem: MainMenuItem) => {
                                 const activeClassLower = (asPath === lowerSubMenuItem.path) ? 'active-link': 'non-active-link';
                                 const ariaCurrentPageLower = (asPath === lowerSubMenuItem.path && lowerSubMenuItem.path !== '/') ? 'page' : undefined;
