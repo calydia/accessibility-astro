@@ -102,7 +102,7 @@ export default function SearchComponent({ searchLabel, searchButton, searchDescr
           <h3 id="search-result-pages">{searchResultPageLabel} {searchPageResultNumber} {searchResultLabel}</h3>
           <ul>
             {searchPageResult.map((result: SearchResults, index: number) => {
-              const resultPrefix = (result.locale == 'en') ? '/' : '/fi/';
+              const resultPrefix = (result.locale == 'en') ? '/en/' : '/fi/';
               const languageLabel = (result.locale == 'en') ? searchLangLabelEn : searchLangLabelFi;
               return (
                   <li key={`result-${index}`} className="my-2 py-6 flex flex-col border-t-2
@@ -124,7 +124,7 @@ export default function SearchComponent({ searchLabel, searchButton, searchDescr
           <h3 id="search-result-demos">{searchResultDemoLabel} {searchDemoResultNumber} {searchResultLabel}</h3>
           <ul>
             {searchDemoResult.map((demoResult: SearchResults, index: number) => {
-              const demoResultPrefix = (demoResult.locale == 'en') ? '/' : '/fi/';
+              const demoResultPrefix = (demoResult.locale == 'en') ? '/en/' : '/fi/';
               const languageLabel = (demoResult.locale == 'en') ? searchLangLabelEn : searchLangLabelFi;
               return (
                   <li key={`result-demo-${index}`} className="my-2 py-6 flex flex-col border-t-2
