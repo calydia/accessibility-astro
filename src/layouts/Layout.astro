@@ -62,7 +62,7 @@ const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === 
           <a href={`/${lang}`} class="inline-block border-y-4 border-transparent p-4
             hover:border-y-4 hover:border-lt-purple dark:hover:border-dk-blue-light
             focus:outline focus:outline-2 focus:outline-offset-4 	focus:outline-black dark:focus:outline-white">
-            <span class="block text-2xl font-title text-black dark:text-white dark:text-shadow-text">Sanna Kramsi <span class="text-blue-tory dark:text-lt-perfume">-</span> {  t('site-name') }</span>
+            <span class="block text-2xl font-title text-black dark:text-white dark:text-shadow-text">{ t('site-name') }</span>
             <span class="block text-lg mt-2 font-title leading-none text-blue-tory dark:text-lt-perfume dark:text-shadow-text">{  t('site-slogan') }</span>
         </a>
         </div>
@@ -82,7 +82,7 @@ const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === 
     <slot name="blogs" />
     <Footer currentPage={ currentUrl } locale={ locale } />
     <div itemscope itemtype="https://schema.org/WebSite">
-      <meta itemprop="url" content="https://a11y.sanna.ninja/"/>
+      <meta itemprop="url" content="https://a11y.ing/"/>
       <meta itemprop="name" content={ t('site-name') } />
     </div>  
   </body>
