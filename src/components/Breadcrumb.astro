@@ -21,7 +21,7 @@ const currentTitle = Astro.props.currentTitle;
 const currentTitleCap = currentTitle.charAt(0).toUpperCase() + currentTitle.slice(1);
 ---
 
-<nav aria-label={ t('breadcrumb-aria') } class={`${Astro.props.gridClass} breadcrumb w-full p-4-px md:px-8-px text-lt-gray dark:text-white`}>
+<nav aria-label={ t('breadcrumb-aria') } class={`${Astro.props.gridClass} breadcrumb p-4-px md:px-8-px text-lt-gray dark:text-white`}>
   <ul class="block list-none m-0 p-0">
     <li class="inline">
       <a href={`/${ lang }`} aria-current={!pathArray ? 'page' : false} class="underline underline-offset-2">
