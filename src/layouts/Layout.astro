@@ -44,14 +44,15 @@ const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === 
       <link rel="canonical" href="https://a11y.ing" />
     : null }
     { (currentType == "front" && lang == 'fi')  ?
-    <link rel="canonical" href="https://a11y.ing/fi" />
+    <link rel="canonical" href="https://a11y.ing/fi/" />
     : null }
     { (currentType !== "front") ?
-      <link rel="canonical" href={`https://a11y.ing/${lang}/${currentUrl}`} />
+      <link rel="canonical" href={`https://a11y.ing/${lang}/${currentUrl}/`} />
     : null }
     <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicons/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <Alternates alternateFi={ alternateFi } alternateEn={ alternateEn } type={ type } />
   </head>
   <body class="font-sans hyphens-auto">
