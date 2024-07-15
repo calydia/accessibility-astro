@@ -49,6 +49,9 @@ const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === 
     { (currentType !== "front") ?
       <link rel="canonical" href={`https://a11y.ing/${lang}/${currentUrl}/`} />
     : null }
+    { (currentType == "demo") ?
+      <link rel="canonical" href={`https://a11y.ing/${lang}/demo/${currentUrl}/`} />
+    : null }
     <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicons/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
