@@ -46,20 +46,28 @@ const currentPath = '/' + Astro.props.currentPage;
         Sanna Kramsi
       </span>
       <div class="flex flex-col">
-        <a
-          href="https://wcag.a11y.ing"
-          rel="noopener noreferrer"
-          class="font-light"
-        >
-          { t('ext-wcag') }
-        </a>  
-        <a
-          href="https://blog.sanna.ninja"
-          rel="noopener noreferrer"
-          class="font-light"
-        >
-          { t('ext-blog') }
-        </a>        
+        <nav aria-label={ t('sanna-other-sites') }>
+          <ul class="m-0 p-0">
+            <li>
+              <a
+                href="https://wcag.a11y.ing"
+                rel="noopener noreferrer"
+                class="font-light"
+              >
+                { t('ext-wcag') }
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://blog.sanna.ninja"
+                rel="noopener noreferrer"
+                class="font-light"
+              >
+                { t('ext-blog') }
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>

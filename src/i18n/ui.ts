@@ -42,7 +42,8 @@ export const ui = {
     'search-block-label': 'Go to search page',
     'back-to-top-button': 'Back to top',
     'toc-title': 'Table of contents',
-    'ext-wcag': 'My WCAG site'
+    'ext-wcag': 'My WCAG site',
+    'sanna-other-sites': 'My other websites'
   },
   fi: {
     'site-name': 'Toki, jos voisin',
@@ -80,6 +81,7 @@ export const ui = {
     'search-block-label': 'Siirry hakusivulle',
     'back-to-top-button': 'Takaisin sivun ylälaitaan',
     'toc-title': 'Sisällysluettelo',
-    'ext-wcag': 'WCAG sivustoni'
+    'ext-wcag': 'WCAG sivustoni',
+    'sanna-other-sites': 'Muita sivustojani'
   },
 } as const;

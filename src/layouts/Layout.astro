@@ -590,6 +590,12 @@ h4::before {
         (event.target as HTMLButtonElement).focus();
       }
 
+      // If we press esc when focused on a menu button or the toggle.
+      if (targetClass.contains('side-menu-button') || targetClass.contains('menu-toggle') || targetClass.contains('mobile-menu-toggle')) {
+        (event.target as HTMLButtonElement).setAttribute('aria-expanded', 'false');
+        (event.target as HTMLButtonElement).focus();
+      }
+
       // If esc is pressed on a menu button with aria-expanded as false, close the menu and focus the toggle.
       if (targetClass.contains('menu-button') && currentExpanded == 'false') {
         const menuToggle = document.getElementById('main-menu-toggle');
