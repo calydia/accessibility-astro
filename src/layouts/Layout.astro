@@ -571,6 +571,44 @@ h4::before {
   .crumb-no-grid {
     @apply max-w-4xl mx-auto;
   }
+
+  .demo-buttons {
+    @apply flex flex-row flex-wrap;
+  }
+  .demo-button-wrapper {
+    @apply relative;
+  }
+  .demo-button-fail {
+
+    @apply block w-5 h-5 bg-blue-tory;
+  }
+  .demo-button-size-fail {
+    background-color: white;
+    left: -0.125rem;
+    top: -0.125rem;
+
+    @apply absolute w-6 h-6 rounded-full z-10 opacity-50;
+  }
+
+  .demo-button-margin {
+
+    @apply block w-5 h-5 m-1 bg-blue-tory;
+  }
+  .demo-button-size-margin {
+    background-color: white;
+
+    @apply absolute z-10 w-6 h-6 rounded-full left-0.5 top-0.5 opacity-50;
+  }
+
+  .demo-button-padding {
+
+    @apply block w-6 h-6 p-1 bg-blue-tory;
+  }
+  .demo-button-size-padding {
+    background-color: white;
+
+    @apply absolute w-6 h-6 rounded-full z-10 opacity-50 top-0 left-0;
+  }
 </style>
 
 <script>
