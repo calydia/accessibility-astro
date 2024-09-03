@@ -46,7 +46,7 @@ const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === 
     { (currentType == "front" && lang == 'fi')  ?
     <link rel="canonical" href="https://a11y.ing/fi/" />
     : null }
-    { (currentType !== "front") ?
+    { (currentType !== "front" && currentType !=="demo") ?
       <link rel="canonical" href={`https://a11y.ing/${lang}/${currentUrl}/`} />
     : null }
     { (currentType == "demo") ?
