@@ -30,7 +30,6 @@ module.exports = {
         'sans': ['Atkinson Hyperlegible', 'Arial', 'sans-serif'],
         'heading': ['Atkinson Hyperlegible'],
         'menu': ['Lato', 'Arial', 'sans-serif'],
-        'name': ['Rock Salt', 'cursive'],
       },
       outlineOffset: {
         15: '15px',
