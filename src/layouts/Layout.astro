@@ -11,9 +11,10 @@ import Alternates from '../components/Alternates.astro';
 import SideMenu from '../components/SideMenu.astro';
 const { title, locale, engUrl, fiUrl, currentUrl, currentSlug, metaDescription, currentType, alternateFi, alternateEn, type } = Astro.props
 
-import '@fontsource/rock-salt';
+import '@fontsource/satisfy';
 import '@fontsource/atkinson-hyperlegible';
 import '@fontsource/lato';
+import '@fontsource/rock-salt';
 
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
@@ -72,8 +73,8 @@ const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === 
           <a href={`/${lang}`} class="inline-block border-y-4 border-transparent p-4
             hover:border-y-4 hover:border-lt-purple dark:hover:border-dk-blue-light
             focus:outline focus:outline-2 focus:outline-offset-4 	focus:outline-black dark:focus:outline-white">
-            <span class="block text-2xl font-title text-black dark:text-white dark:text-shadow-text">{ t('site-name') }</span>
-            <span class="block text-lg mt-2 font-title leading-none text-blue-tory dark:text-lt-perfume dark:text-shadow-text">{  t('site-slogan') }</span>
+            <span class="block text-3xl font-title text-black dark:text-white dark:text-shadow-text">A11ying with Sanna - { t('site-name') }</span>
+            <span class="block text-xl mt-2 font-title leading-none text-blue-tory dark:text-lt-perfume dark:text-shadow-text">{  t('site-slogan') }</span>
         </a>
         </div>
       </div>
