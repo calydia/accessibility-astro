@@ -17,4 +17,7 @@ export default defineConfig({
       }
     }
   }), tailwind(), react(), icon()],
+  redirects: {
+    '/fi/perusteet/vammaisuuden-tyypit/psykologiset-psykiatriset-vammat': '/fi/perusteet/vammaisuuden-tyypit/psykologiset-psyykkiset-vammat'
+  }
 });

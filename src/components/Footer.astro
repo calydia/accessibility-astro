@@ -32,7 +32,7 @@ const currentPath = '/' + Astro.props.currentPage;
         return (
           <li class="flex gap-4 items-center my-4 text-lt-blue-dark dark:text-dk-blue-light">
             <Icon name={menuItem.iconClass} class="h-8 w-8" />
-            <a href={`/${lang}${menuItem.path}`} aria-current={ariaCurrentPage} class={`${activeClass}`}
+            <a href={`/${lang}${menuItem.path}`} aria-current={ariaCurrentPage} class={`${activeClass} py-3`}
             >
               {menuItem.title}
             </a>
@@ -42,9 +42,6 @@ const currentPath = '/' + Astro.props.currentPage;
       </ul>
     </nav>
     <div class="flex items-center">
-      <span aria-hidden="true" class="font-title text-xl inline-block mr-4 text-lt-blue-dark dark:text-dk-blue-light">
-        Sanna Kramsi
-      </span>
       <div class="flex flex-col">
         <nav aria-label={ t('sanna-other-sites') }>
           <ul class="m-0 p-0">
@@ -52,7 +49,7 @@ const currentPath = '/' + Astro.props.currentPage;
               <a
                 href="https://wcag.a11y.ing"
                 rel="noopener noreferrer"
-                class="font-light"
+                class="font-light block py-3"
               >
                 { t('ext-wcag') }
               </a>
@@ -61,7 +58,7 @@ const currentPath = '/' + Astro.props.currentPage;
               <a
                 href="https://blog.sanna.ninja"
                 rel="noopener noreferrer"
-                class="font-light"
+                class="font-light block py-3"
               >
                 { t('ext-blog') }
               </a>
