@@ -145,7 +145,7 @@ const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === 
   }
 
   .light {
-    @apply bg-white;
+    @apply bg-lt-bg;
   }
   .dark {
     @apply bg-dk-blue-darkest;
@@ -218,6 +218,9 @@ const crumbClass = (currentType !== "front" && currentUrl.includes('info/') === 
     @apply mb-4 text-lg lg:text-xl font-bold mt-12 font-heading relative;
   }
 
+  h1, h2, h3, h4 {
+    @apply text-lt-gray-heading dark:text-dk-gray-heading;
+  }
 h1::before,
 h2::before,
 h3::before,
