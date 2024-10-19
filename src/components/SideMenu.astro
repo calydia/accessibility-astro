@@ -27,8 +27,8 @@ const filteredMenu = menuItems.filter((menuItem: MainMenuItem) => menuItem.path 
         {menuItem.type == 'WRAPPER' &&
           // We know the first level items are only wrappers
           <div>
-            <span id="side-menu-label" class="relative bg-white dark:bg-dk-blue-darkest text-lt-gray dark:text-dk-gray text-xl mx-8 px-2 pb-2 block mb-[-3.5rem] mt-8">{menuItem.title}</span>
-            <nav id="side-menu-nav" aria-labelledby="side-menu-label" class="sidebar-menu text-lt-gray dark:text-dk-gray pb-1 pt-6 px-2 mt-8 bg-white dark:bg-dk-blue-darkest my-12 border-solid border-l-8 border-t-2 border-b-2 border-r-2 rounded-3xl border-lt-code-border dark:border-dk-code-border">
+            <span id="side-menu-label" class="relative bg-lt-bg dark:bg-dk-blue-darkest text-lt-gray dark:text-dk-gray text-xl mx-8 px-2 pb-2 block mb-[-3.5rem] mt-8">{menuItem.title}</span>
+            <nav id="side-menu-nav" aria-labelledby="side-menu-label" class="sidebar-menu text-lt-gray dark:text-dk-gray pb-1 pt-6 px-2 mt-8 bg-lt-bg dark:bg-dk-blue-darkest my-12 border-solid border-l-8 border-t-2 border-b-2 border-r-2 rounded-3xl border-lt-code-border dark:border-dk-code-border">
             {menuItem.items &&
               <ul id={`side-menu-button-${index}`}
                 class="ml-2">
