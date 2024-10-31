@@ -39,7 +39,13 @@ export default async function fetchApi<T>({
     sort = '&sort=termName';
   }
   
-  const url = new URL(`${import.meta.env.STRAPI_URL}/api/${endpoint}?populate=localizations&${lang}${sort}`);
+  let populate = '';
+  if (endpoint == 'exove-blogs') {
+    populate = '&populate=blogImage';
+    sort= '&sort=id:desc';
+  }
+
+  const url = new URL(`${import.meta.env.STRAPI_URL}/api/${endpoint}?populate=localizations&${lang}${sort}${populate}`);
 
   const res = await fetch(url.toString());
   let data = await res.json();
