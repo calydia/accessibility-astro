@@ -10,3 +10,9 @@ export interface FrontPage {
     locale: string
   }
 }
+
+export interface Notice {
+  attributes: {
+    noticeContent: string
+  }
+}
