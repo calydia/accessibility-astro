@@ -1,6 +1,6 @@
 ---
 import fetchApi from '../lib/strapi';
-import type { FrontPage } from '../interfaces/frontpage';
+import type { FrontPage, Notice } from '../interfaces/frontpage';
 import type { ExoveBlog } from '../interfaces/blogInterfaces';
 import Layout from '../layouts/Layout.astro';
 import BlogHighlights from '../components/BlogHighlights.astro';
@@ -17,6 +17,12 @@ const posts = await fetchApi<ExoveBlog>({
   wrappedByKey: 'data',
   lang: 'en'
 });
+
+const notice = await fetchApi<Notice>({
+  endpoint: 'notice',
+  wrappedByKey: 'data',
+  lang: 'fi'
+});
 ---
 
 <Layout title={ frontPage.attributes.title } locale={ frontPage.attributes.locale} metaDescription={ frontPage.attributes.metaDescription }
@@ -27,6 +33,14 @@ const posts = await fetchApi<ExoveBlog>({
       <h1 id="skip-target">{ frontPage.attributes.title }</h1>
       <div class="text-xl bodytext"><Fragment set:html={ frontPage.attributes.content } /></div>
     </div>
+    { (notice.attributes.noticeContent) ?
+      <div class="max-w-xl mx-4 sm:mx-auto border-8 p-8 md:mt-12 bg-lt-blue-light text-lt-gray self-start
+          dark:gradient-border-dark dark:bg-dk-purple dark:text-dk-gray gradient-border-light dark:radient-border-dark shadow-md">
+        { notice.attributes.noticeContent }
+      </div>
+    :
+      null
+    }
   </div>
   <BlogHighlights slot="blogs" />
   <ExoveBlogHighlights slot="blogs"
