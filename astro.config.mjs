@@ -8,6 +8,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://a11y.ing/',
+  trailingSlash: 'always',
   integrations: [sitemap({
     i18n: {
       defaultLocale: 'en',
