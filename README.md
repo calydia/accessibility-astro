@@ -1,6 +1,6 @@
 # Astro frontend for my accessibility website
 
-The frontend for my accessibility website at https://a11y.sanna.ninja.
+The frontend for my accessibility website at https://a11y.ing.
 
 ## 🧞 Commands
 
