@@ -1,11 +1,18 @@
 ---
 import fetchApi from '../../lib/strapi';
 import type { FrontPage, Notice } from '../../interfaces/frontpage';
+import type { ExoveBlog } from '../../interfaces/blogInterfaces';
 import Layout from '../../layouts/Layout.astro';
-import BlogHighlights from '../../components/BlogHighlights.astro';
+import ExoveBlogHighlights from '../../components/ExoveBlogHighlights.astro';
 
 const frontPage = await fetchApi<FrontPage>({
   endpoint: 'front-page',
+  wrappedByKey: 'data',
+  lang: 'fi'
+});
+
+const posts = await fetchApi<ExoveBlog>({
+  endpoint: 'exove-blogs',
   wrappedByKey: 'data',
   lang: 'fi'
 });
@@ -35,5 +42,10 @@ const notice = await fetchApi<Notice>({
     }
 
   </div>
-  <BlogHighlights slot="blogs" />
+  <ExoveBlogHighlights slot="blogs"
+    title="Uusimmat kirjoitukseni Exoven blogissa"
+    intro="Yritän tehdä osuuteni Exoven tavoitteessa poistaa digiturhautumista kirjoittamalla saavutettavuudesta Exoven blogissa."
+    posts={posts}
+    bgClass="bg-gray"
+  />
 </Layout>
