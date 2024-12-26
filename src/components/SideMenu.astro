@@ -61,7 +61,7 @@ const filteredMenu = menuItems.filter((menuItem: MainMenuItem) => menuItem.path 
                                 // The third level items are only links
                                 return(
                                   <li class="my-1.5">
-                                    <a href={`/${lang}${lowerSubMenuItem.path}`} aria-current={ariaCurrentPageLower}
+                                    <a href={`/${lang}${lowerSubMenuItem.path}/`} aria-current={ariaCurrentPageLower}
                                       class={`text-base p-1 block first-letter:capitalize ${activeClassLower}`}
                                     >
                                       {lowerSubMenuItem.title}
@@ -72,7 +72,7 @@ const filteredMenu = menuItems.filter((menuItem: MainMenuItem) => menuItem.path 
                           </ul>
                         </li>
                       : <li class="my-1.5">
-                          <a href={`/${lang}${subMenuItem.path}`} aria-current={ariaCurrentPage}
+                          <a href={`/${lang}${subMenuItem.path}/`} aria-current={ariaCurrentPage}
                             class={`text-base p-1 block first-letter:capitalize ${activeClass}`}
                           >
                             {subMenuItem.title}
