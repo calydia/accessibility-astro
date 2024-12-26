@@ -4,9 +4,9 @@ const alternateEn = Astro.props.alternateEn;
 
 ---
 { (Astro.props.type === "demo") ?
-<link rel="alternate" hreflang="fi" href={`https://a11y.ing/fi/demo/${ alternateFi }`} />
-<link rel="alternate" hreflang="en" href={`https://a11y.ing/en/demo/${ alternateEn }`} />
+<link rel="alternate" hreflang="fi" href={`https://a11y.ing/fi/demo/${ alternateFi }/`} />
+<link rel="alternate" hreflang="en" href={`https://a11y.ing/en/demo/${ alternateEn }/`} />
 :
-<link rel="alternate" hreflang="fi" href={`https://a11y.ing/${ alternateFi }`} />
-<link rel="alternate" hreflang="en" href={`https://a11y.ing/${ alternateEn }`} />
+<link rel="alternate" hreflang="fi" href={`https://a11y.ing/${ alternateFi }/`} />
+<link rel="alternate" hreflang="en" href={`https://a11y.ing/${ alternateEn }/`} />
 }
