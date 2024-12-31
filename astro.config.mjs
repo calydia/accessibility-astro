@@ -18,4 +18,7 @@ export default defineConfig({
       }
     }
   }), tailwind(), react(), icon()],
+  redirects: {
+    '/en/fundamentals/theoretical-models-of-disability/social-identity-or-cultural-affliation-model/': '/en/fundamentals/theoretical-models-of-disability/social-identity-or-cultural-affiliation-model'
+  }
 });
