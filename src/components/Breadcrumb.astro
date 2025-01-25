@@ -19,6 +19,8 @@ const pathArray = (Astro.props.currentUrl !== '/') ? Astro.props.currentUrl.spli
 const currentSlug = Astro.props.currentSlug;
 const currentTitle = Astro.props.currentTitle;
 const currentTitleCap = currentTitle.charAt(0).toUpperCase() + currentTitle.slice(1);
+const pageType = Astro.props.type;
+const demoTitle = lang == 'en' ? 'Demos' : 'Demot';
 ---
 
 <nav aria-label={ t('breadcrumb-aria') } class={`${Astro.props.gridClass} breadcrumb p-4-px md:px-8-px text-lt-gray dark:text-dk-gray`}>
@@ -28,6 +30,13 @@ const currentTitleCap = currentTitle.charAt(0).toUpperCase() + currentTitle.slic
         { t('home-link') }
       </a>
     </li>
+    {pageType == 'demo' ?
+      <li class="inline">
+        <span class="mx-2">/</span>
+        { demoTitle }
+      </li>
+      : null
+    }
     {pathArray && pathArray.map((menuItem: string) => {
       let menuTitle:string = '';
 
