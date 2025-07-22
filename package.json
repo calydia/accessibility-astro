@@ -23,7 +23,7 @@
     "astro": "^5.0.5",
     "astro-icon": "^1.0.2",
     "dayjs": "^1.11.10",
-    "meilisearch": "^0.50.0",
+    "meilisearch": "^0.51.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
