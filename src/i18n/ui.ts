@@ -13,7 +13,7 @@ export const ui = {
     'skip-link-search-text': 'Skip to search',
     'breadcrumb-aria': 'Breadcrumb',
     'home-link': 'Home',
-    'main-menu-aria': 'Site main menu',
+    'main-menu-aria': 'Main',
     'footer-menu-aria': 'Info',
     'theme-toggle-text-light': 'Switch to light version',
     'theme-toggle-text-dark': 'Switch to dark version',
@@ -22,7 +22,7 @@ export const ui = {
     'demo-final-heading': 'Final comments',
     'language-switcher-aria': 'Switch language/Vaihda kieltä. Current language: English (EN)',
     'language-switcher-language': 'English (EN)',
-    'menu-button': 'Menu',
+    'menu-button': 'Navigation',
     'menu-button-next-level': 'Next menu level',
     'name-main-menu': 'Main menu',
     'name-info-menu': 'Info menu',
@@ -43,7 +43,8 @@ export const ui = {
     'back-to-top-button': 'Back to top',
     'toc-title': 'Table of contents',
     'ext-wcag': 'My WCAG site',
-    'sanna-other-sites': 'My other websites'
+    'sanna-other-sites': 'My other websites',
+    'site-front-link': 'A11ying with Sanna - I would if I could front page'
   },
   fi: {
     'site-name': 'Toki, jos voisin',
@@ -82,6 +83,7 @@ export const ui = {
     'back-to-top-button': 'Takaisin sivun ylälaitaan',
     'toc-title': 'Sisällysluettelo',
     'ext-wcag': 'WCAG sivustoni',
-    'sanna-other-sites': 'Muita sivustojani'
+    'sanna-other-sites': 'Muita sivustojani',
+    'site-front-link': 'A11ying with Sanna - Toki jos voisin etusivu'
   },
 } as const;
