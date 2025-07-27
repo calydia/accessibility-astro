@@ -41,7 +41,7 @@ export const ui = {
     'search-result-no-results': 'No results.',
     'search-block-label': 'Go to search page',
     'back-to-top-button': 'Back to top',
-    'toc-title': 'Table of contents',
+    'toc-title': 'On this page',
     'ext-wcag': 'My WCAG site',
     'sanna-other-sites': 'My other websites',
     'site-front-link': 'A11ying with Sanna - I would if I could front page'
@@ -81,7 +81,7 @@ export const ui = {
     'search-result-no-results': 'Ei tuloksia.',
     'search-block-label': 'Siirry hakusivulle',
     'back-to-top-button': 'Takaisin sivun ylälaitaan',
-    'toc-title': 'Sisällysluettelo',
+    'toc-title': 'Tällä sivulla',
     'ext-wcag': 'WCAG sivustoni',
     'sanna-other-sites': 'Muita sivustojani',
     'site-front-link': 'A11ying with Sanna - Toki jos voisin etusivu'
